@@ -253,5 +253,38 @@
         window.location.href = 'entermoney.html';
       });
     </script>
+  
+  
+
+
+<script>
+  const balance = localStorage.getItem("userBalance");
+  const recommendationElement = document.querySelector(".recommendation-content");
+
+  if (!balance || isNaN(parseFloat(balance)) || parseFloat(balance) <= 0) {
+    recommendationElement.textContent = "الرجاء إدخال رصيدك أولاً.";
+  } else {
+    const b = parseFloat(balance);
+    let status = "";
+    let suggestion = "";
+
+    if (b < 500) {
+      status = " منخفض جداً";
+      suggestion = "ننصح بعدم الاستثمار حالياً.";
+    } else if (b >= 500 && b < 1000) {
+      status = "⚖️ مستقر";
+      suggestion = "استثمر 10% من رصيدك في USDT.";
+    } else if (b >= 1000 && b < 5000) {
+      status = " مناسب للاستثمار";
+      suggestion = "استثمر 20% من رصيدك في BTC أو ETH.";
+    } else {
+      status = " رصيد ممتاز!";
+      suggestion = "استثمر 30% في سلة عملات رقمية متنوعة.";
+    }
+
+    recommendationElement.textContent = `🔍 الحالة: ${status}\n💡 التوصية: ${suggestion}`;
+  }
+</script>
+
   </body>
 </html>

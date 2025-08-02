@@ -207,8 +207,10 @@
     <div class="container">
       <section class="balance-input">
         <h2>ادخل الرصيد</h2>
-        <input type="text" placeholder="ادخل المبلغ هنا" />
-        <button>انقر للحصول على التوصية الذكية</button>
+         <input type="number" id="balanceInput" placeholder="أدخل المبلغ هنا" />
+  <br />
+  <button onclick="saveBalanceAndGo()">احصل على التوصية</button>
+        
       </section>
 
       <section class="currency-table">
@@ -288,6 +290,23 @@
 
       tbody.appendChild(row);
     });
+   
   </script>
+  
+ <script>
+  document.querySelector('.balance-input button').addEventListener('click', () => {
+    const input = document.querySelector('#balanceInput').value.trim();
+    const value = Number(input);
+
+    if (!isNaN(value) && value > 0) {
+      localStorage.setItem('userBalance', value);
+      window.location.href = 'resulte.html';
+    } else {
+      alert('الرجاء إدخال مبلغ رقمي صحيح (أكبر من صفر) للمتابعة.');
+    }
+  });
+</script>
+
+
 </body>
 </html>
