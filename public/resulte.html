@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FinWise Dashboard</title>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #202224;
+        background: linear-gradient(180deg, rgba(55, 73, 166, 1) 100%);
+        height: 100%;
+      }
+
+      .dashboard {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 0;
+        box-sizing: border-box;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .logo {
+        width: 97px;
+        height: 71px;
+      }
+
+      .search-bar {
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #d4d4d4;
+        border-radius: 19px;
+        background-color: #f5f6fa;
+      }
+
+      .language-selector,
+      .user-profile {
+        display: flex;
+        align-items: center;
+      }
+
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .chart-section {
+        flex: 1;
+        padding: 20px;
+        background-color: #f5f6fa;
+        border-radius: 20px;
+      }
+
+      .chart-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #3749a6;
+      }
+
+      #marketChart {
+        width: 100%;
+        height: 500px;
+      }
+
+      .recommendation,
+      .market-status {
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 13px 61px rgba(169, 169, 169, 0.16);
+        font-size: 20px;
+      }
+
+      .recommendation {
+        background-color: #ffffff;
+        text-align: center;
+      }
+
+      .recommendation-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .recommendation-content {
+        font-size: 28px;
+        color: #3749a6;
+      }
+
+      .market-status {
+        background: linear-gradient(180deg, #7e9bd8 0%, #4379ee 100%);
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .market-status-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+
+      .market-status-content {
+        font-size: 22px;
+        color: #F93C65;
+      }
+
+      .action-button {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 40px auto 0;
+        padding: 15px;
+        background-color: #d40202;
+        color: #ffffff;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 900;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .action-button:hover {
+        background-color: #b50000;
+      }
+
+      @media (max-width: 768px) {
+        .main-content {
+          gap: 20px;
+        }
+
+        .recommendation-content,
+        .market-status-content {
+          font-size: 20px;
+        }
+
+        .chart-title {
+          font-size: 22px;
+        }
+
+        #marketChart {
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard">
+      <header class="header">
+        <img src="img/image-2.png" alt="FinWise Logo" class="logo" />
+        <div class="search-bar">
+          <input type="text" placeholder="بحث" />
+        </div>
+        <div class="language-selector">
+          <span>العربية</span>
+          <img src="img/drop-down.png" alt="Language Dropdown" style="width: 10px; height: 5px; margin-right: 5px" />
+        </div>
+        <div class="user-profile">
+          <img src="img/asia.svg" alt="User Icon" style="width: 39px; height: 25px; margin-right: 10px" />
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- ✅ مخطط خطي لحالة السوق -->
+        <section class="chart-section">
+          <h2 class="chart-title">حالة السوق اليوم</h2>
+          <canvas id="marketChart"></canvas>
+        </section>
+
+        <!-- ✅ التوصية الذكية -->
+        <section class="recommendation">
+          <h3 class="recommendation-title">التوصية الذكية</h3>
+          <p class="recommendation-content">
+            ننصحك بتحويل 10% فقط من رصيدك إلى عملة BTC لتحقيق أفضل فرصة استثمارية
+          </p>
+        </section>
+
+        <!-- ✅ حالة السوق -->
+        <section class="market-status">
+          <h3 class="market-status-title">حالة السوق الآن</h3>
+          <p class="market-status-content">السوق يشهد هبوط ملحوظ</p>
+        </section>
+
+        <!-- ✅ زر الرجوع -->
+        <button class="action-button">رجوع</button>
+      </main>
+    </div>
+
+    <!-- ✅ الرسم البياني الخطي باستخدام Chart.js -->
+    <script>
+      const ctx = document.getElementById('marketChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+          datasets: [{
+            label: 'BTC سعر',
+            data: [27800,27200,27500,27300,26800,27000,26500,27800,27200,27500,27300,26800,27000,26500,27000,26500,27800,27200,27500,27300,26800,27000,26500],
+            borderColor: '#00b69b',
+            backgroundColor: 'rgba(0,182,155,0.2)',
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+           title: {
+          display: true,
+          text: 'تغير سعر BTC خلال الأسبوع',
+          font: {
+            size: 24,
+            weight: 'bold'
+          },
+          color: '#3749a6'
+        }
+      },
+          scales: {
+            y: {
+              beginAtZero: false,
+              title: {
+                display: true,
+                text: 'السعر (USD)'
+              }
+            }
+          }
+        }
+      });
+    </script>
+
+    <!-- ✅ زر الرجوع إلى entermoney.html -->
+    <script>
+      document.querySelector('.action-button').addEventListener('click', () => {
+        window.location.href = 'entermoney.html';
+      });
+    </script>
+  </body>
+</html>

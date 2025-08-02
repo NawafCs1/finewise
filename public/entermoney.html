@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FinWise - منصة التحويلات المالية الذكية</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #202224;
+      background: linear-gradient(180deg, rgba(55, 73, 166, 1) 100%);
+      height: 100%;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 97px;
+      height: 71px;
+    }
+
+    .search-bar {
+      flex-grow: 1;
+      max-width: 465px;
+      margin: 0 20px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #d4d4d4;
+      border-radius: 19px;
+      background-color: #f5f6fa;
+    }
+
+    .language-selector {
+      margin-right: 20px;
+    }
+
+    .hero {
+      background-color: #3749a6;
+      color: #ffffff;
+      padding: 50px 0;
+      text-align: right;
+    }
+
+    .hero h1 {
+      font-size: 37px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 24px;
+      opacity: 0.8;
+    }
+
+    main {
+      background-color: #ffffff;
+      padding: 40px 0;
+      border-radius: 20px 20px 0 0;
+      margin-top: -20px;
+    }
+
+    .balance-input {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    .balance-input h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .balance-input input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d4d4d4;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .balance-input button {
+      background-color: #00b69b;
+      color: #ffffff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .currency-table {
+      background-color: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+    }
+
+    .currency-table h2 {
+      font-size: 24px;
+      padding: 20px;
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      text-align: right;
+      padding: 15px;
+      border-bottom: 1px solid #f1f3f9;
+    }
+
+    th {
+      background-color: #f1f3f9;
+      font-weight: bold;
+    }
+
+    .status {
+      padding: 5px 10px;
+      border-radius: 13.5px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .status-active {
+      background-color: #00b69b;
+      color: #ffffff;
+    }
+
+    .status-stable {
+      background-color: #fcbe2d;
+      color: #ffffff;
+    }
+
+    .status-risky {
+      background-color: #fd5454;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-bar {
+        margin: 20px 0;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <img src="img/image-2.png" alt="FinWise Logo" class="logo" />
+      <div class="search-bar">
+        <input type="text" placeholder="بحث" />
+      </div>
+      <div class="language-selector">
+        <span>العربية</span>
+        <img src="img/drop-down.png" alt="Language Dropdown" style="width: 10px; height: 5px; margin-right: 5px" />
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>منصة FinWise</h1>
+      <p>منصة موثوقة تمكّنك من إدارة تحويلاتك المالية بكل سهولة وأمان، من خلال تقديم تحليلات مالية ذكية وإرشادات تفصيلية تساعدك على تنفيذ عملياتك بنفسك دون وسيط</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="balance-input">
+        <h2>ادخل الرصيد</h2>
+        <input type="text" placeholder="ادخل المبلغ هنا" />
+        <button>انقر للحصول على التوصية الذكية</button>
+      </section>
+
+      <section class="currency-table">
+        <h2>جدول العملات الذكي</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>العملة</th>
+              <th>السعر بالريال</th>
+              <th>السعر بالدولار</th>
+              <th>التاريخ _ الوقت</th>
+              <th>الحالة السوقية</th>
+            </tr>
+          </thead>
+          <tbody id="currency-body">
+            <!-- سيتم ملؤه ديناميكياً -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    document.querySelector('.balance-input button').addEventListener('click', () => {
+      const input = document.querySelector('.balance-input input').value.trim();
+      const value = Number(input);
+
+      if (!isNaN(value) && value > 0) {
+        localStorage.setItem('enteredAmount', value);
+        window.location.href = 'resulte.html';
+      } else {
+        alert('الرجاء إدخال مبلغ رقمي صحيح (أكبر من صفر) للمتابعة.');
+      }
+    });
+
+    const mockData = [
+      { symbol: "BTCUSDT", priceUSD: 66000.23, priceSAR: 247500, change24h: 3.4, isUp: true },
+      { symbol: "ETHUSDT", priceUSD: 3500.11, priceSAR: 13120, change24h: 0.5, isUp: true },
+      { symbol: "ADAUSDT", priceUSD: 0.85, priceSAR: 3.19, change24h: -2.6, isUp: false }
+    ];
+
+    const tbody = document.getElementById('currency-body');
+
+    mockData.forEach(coin => {
+      const row = document.createElement('tr');
+
+      let statusClass = '', statusText = '';
+      if (coin.change24h >= 2) {
+        statusClass = 'status-active';
+        statusText = 'نشطة';
+      } else if (coin.change24h >= -1) {
+        statusClass = 'status-stable';
+        statusText = 'مستقرة';
+      } else {
+        statusClass = 'status-risky';
+        statusText = 'مرتفعة المخاطر';
+      }
+
+      const now = new Date();
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = now.getFullYear();
+      let hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const period = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      const formattedTime = `${hours}.${minutes}${period}`;
+      const formattedDateTime = `${day}.${month}.${year} - ${formattedTime}`;
+
+      row.innerHTML = `
+        <td>${coin.symbol.replace('USDT', '')}</td>
+        <td>${coin.priceSAR.toLocaleString()}</td>
+        <td>$${coin.priceUSD.toLocaleString()}</td>
+        <td>${formattedDateTime}</td>
+        <td><span class="status ${statusClass}">${statusText}</span></td>
+      `;
+
+      tbody.appendChild(row);
+    });
+  </script>
+</body>
+</html>

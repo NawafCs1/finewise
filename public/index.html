@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinWise - المنصة الرقمية</title>
+    <style>
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito Sans", "Inter", sans-serif;
+        line-height: 1.6;
+        color: #4d4d4d;
+        background: linear-gradient(180deg, rgba(55, 73, 166, 1) 100%);
+        min-height: 100vh;
+      }
+
+      /* Header Styles */
+      .header {
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(171, 190, 209, 0.4);
+        padding: 10px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 130px;
+        height: auto;
+      }
+
+      /* Main Content Styles */
+      .main-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 100px;
+        background-color: #ffffff;
+      }
+
+      .hero-text {
+        flex: 1;
+        max-width: 50%;
+      }
+
+      .hero-title {
+        font-size: 48px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .hero-title span {
+        color: #4379ee;
+      }
+
+      .hero-title .fin {
+        color: #4880ff;
+      }
+
+      .hero-title .wise {
+        color: #00b69b;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: #00b69b;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 900;
+        padding: 10px 30px;
+        border-radius: 28px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #009b84;
+      }
+
+      .hero-image {
+        flex: 1;
+        max-width: 50%;
+        text-align: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .header,
+        .main-content {
+          padding: 20px 50px;
+        }
+
+        .hero-title {
+          font-size: 36px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text,
+        .hero-image {
+          max-width: 100%;
+        }
+
+        .hero-image {
+          margin-top: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="img/image-2.png" alt="FinWise Logo" class="logo" />
+      <!-- Navigation menu can be added here -->
+    </header>
+    <main class="main-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          اهلا بكم في منصة
+          <span><span class="fin">Fin</span><span class="wise">Wise</span></span>
+          الرقمية
+        </h1>
+        <a href="entermoney.html" class="cta-button">ابدأ الآن</a>
+      </div>
+      <div class="hero-image">
+        <img src="img/image-1.png" alt="Financial Growth Illustration" />
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinWise - منصة التحويلات المالية الذكية</title>
+    <style>
+      /* Global Styles */
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, rgba(55, 73, 166, 1) 100%);
+        color: #202224;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: #ffffff;
+        padding: 10px 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 97px;
+        height: 71px;
+      }
+
+      .search-bar {
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 19px;
+        border: 0.6px solid #d4d4d4;
+        background-color: #f5f6fa;
+      }
+
+      .language-select {
+        margin-right: 20px;
+      }
+
+      /* Main Content Styles */
+      main {
+        padding: 40px 0;
+      }
+
+      .hero {
+        background-color: #3749a6;
+        color: #ffffff;
+        padding: 40px;
+        border-radius: 14px;
+        margin-bottom: 40px;
+      }
+
+      .hero h1 {
+        font-size: 37px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 24px;
+        opacity: 0.8;
+      }
+
+      .balance-input {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 14px;
+        margin-bottom: 40px;
+      }
+
+      .balance-input h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .balance-input input {
+        width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #d4d4d4;
+        font-size: 16px;
+      }
+
+      .smart-recommendation {
+        background-color: #da4444;
+        color: #ffffff;
+        padding: 15px 30px;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .smart-recommendation:hover {
+        background-color: #c13333;
+      }
+
+      .currency-table {
+        background-color: #ffffff;
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .currency-table h2 {
+        padding: 20px;
+        margin: 0;
+        font-size: 24px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: right;
+        border-bottom: 1px solid #f1f3f9;
+      }
+
+      th {
+        background-color: #f1f3f9;
+        font-weight: bold;
+      }
+
+      .status {
+        padding: 5px 10px;
+        border-radius: 13.5px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .status-active {
+        background-color: #00b69b;
+        color: #ffffff;
+      }
+
+      .status-stable {
+        background-color: #fcbe2d;
+        color: #ffffff;
+      }
+
+      .status-high-risk {
+        background-color: #fd5454;
+        color: #ffffff;
+      }
+
+      /* Error Modal Styles */
+      .error-modal {
+        background-color: #ffffff;
+        border-radius: 14px;
+        padding: 40px;
+        text-align: center;
+        max-width: 600px;
+        margin: 40px auto;
+      }
+
+      .error-modal img {
+        max-width: 200px;
+        margin-bottom: 20px;
+      }
+
+      .error-modal h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .error-modal button {
+        background-color: #da4444;
+        color: #ffffff;
+        padding: 15px 30px;
+        border-radius: 8px;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .error-modal button:hover {
+        background-color: #c13333;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 28px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        .balance-input h2 {
+          font-size: 24px;
+        }
+
+        th,
+        td {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <img src="img/image-2.png" alt="FinWise Logo" />
+          </div>
+          <div class="search-bar">
+            <input type="text" placeholder="بحث" />
+          </div>
+          <div class="language-select">
+            <span>العربية</span>
+            
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <section class="hero">
+          <h1>منصة FinWise</h1>
+          <p>
+            منصة موثوقة تمكّنك من إدارة تحويلاتك المالية بكل سهولة وأمان، من خلال تقديم تحليلات مالية ذكية وإرشادات
+            تفصيلية تساعدك على تنفيذ عملياتك بنفسك دون وسيط
+          </p>
+        </section>
+        <section class="balance-input">
+          <h2>ادخل الرصيد</h2>
+          <input type="text" placeholder="ادخل المبلغ هنا" />
+          <button class="smart-recommendation">انقر للحصول على التوصية الذكية</button>
+        </section>
+        <section class="currency-table">
+          <h2>جدول العملات الذكي</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>العملة</th>
+                <th>السعر بالريال</th>
+                <th>السعر بالدولار</th>
+                <th>التاريخ _ الوقت</th>
+                <th>الحالة السوقية</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BTC</td>
+                <td>1000</td>
+                <td>$266.58</td>
+                <td>12.09.2019 - 12.53 PM</td>
+                <td><span class="status status-active">نشطة</span></td>
+              </tr>
+              <tr>
+                <td>ADA</td>
+                <td>2000</td>
+                <td>$533.16</td>
+                <td>12.09.2019 - 12.53 PM</td>
+                <td><span class="status status-stable">مستقرة</span></td>
+              </tr>
+              <tr>
+                <td>XRP</td>
+                <td>3000</td>
+                <td>$799.73</td>
+                <td>12.09.2019 - 12.53 PM</td>
+                <td><span class="status status-high-risk">مرتفعة المخاطر</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="error-modal">
+          <img src="img/404.png" alt="Error 404" />
+          <h2>حدث خطأ !! الرجاء قم بادخال قيمة في الحقل لبدء الاجراء</h2>
+          <button>عودة</button>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
